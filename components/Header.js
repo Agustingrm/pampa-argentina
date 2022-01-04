@@ -3,19 +3,26 @@ import styled from "styled-components";
 import Nav from "./Nav";
 
 const Logo = styled.h1`
+  @font-face {
+    font-family: "ZCOOL QingKe HuangYou";
+    src: url("/static/ZCOOLQingKeHuangYou-Regular.ttf") format("ttf");
+    font-weight: normal;
+    font-style: normal;
+  }
+  font-family: "ZCOOL QingKe HuangYou";
   font-size: 2rem;
   margin-left: 2rem;
   position: relative;
   z-index: 2;
-  font-family: "ZCOOL QingKe HuangYou", cursive;
   font-weight: normal;
+  font-style: normal;
   letter-spacing: 0.05rem;
   a {
     color: white;
     text-decoration: none;
     text-transform: uppercase;
     padding: 0.5rem 1rem;
-    background: #006000;
+    background: var(--green);
   }
 `;
 
