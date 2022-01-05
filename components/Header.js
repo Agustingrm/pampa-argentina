@@ -10,8 +10,8 @@ const Logo = styled.h1`
     font-style: normal;
   }
   font-family: "ZCOOL QingKe HuangYou";
-  font-size: 2rem;
-  margin-left: 2rem;
+  font-size: 4rem;
+  margin: 0 0 0 2rem;
   position: relative;
   z-index: 2;
   font-weight: normal;
@@ -23,6 +23,9 @@ const Logo = styled.h1`
     text-transform: uppercase;
     padding: 0.5rem 1rem;
     background: var(--green);
+    &:hover {
+      text-decoration: none;
+    }
   }
 `;
 
@@ -32,7 +35,7 @@ const HeaderStyles = styled.header`
     display: grid;
     grid-template-columns: auto 1fr;
     justify-content: space-between;
-    align-items: center;
+    align-items: stretch;
   }
 
   .sub-bar {
@@ -49,11 +52,11 @@ export default function Header() {
         <Logo>
           <Link href="/">Pampa Argentina</Link>
         </Logo>
+        <Nav />
       </div>
       <div className="sub-bar">
         <p>Search</p>
       </div>
-      <Nav />
     </HeaderStyles>
   );
 }
