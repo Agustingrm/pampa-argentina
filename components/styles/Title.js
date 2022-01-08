@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 const Title = styled.h3`
-  margin: 0 1rem;
+  margin: 0.5rem 0 0;
   text-align: center;
-  margin-top: -3rem;
+  width: 100%;
   text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
   a {
     background: var(--green);

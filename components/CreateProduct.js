@@ -59,7 +59,7 @@ export default function CreateProduct() {
       <DisplayError error={error} />
       <fieldset disabled={loading} aria-busy={loading}>
         <label htmlFor="image">
-          Images
+          Image or Images
           <input required type="file" id="image" name="image" onChange={handleChange} multiple />
         </label>
         <label htmlFor="name">
