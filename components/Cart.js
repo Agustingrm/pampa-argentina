@@ -6,6 +6,7 @@ import calcTotalPrice from "../lib/calcTotalPrice";
 import CloseButton from "./styles/CloseButton";
 import { useCart } from "../Context/cartState";
 import RemoveFromCart from "./RemoveFromCart";
+import { Checkout } from "./Checkout";
 
 const CartItemStyles = styled.li`
   padding: 1rem 0;
@@ -43,7 +44,6 @@ const LoggedUserCartStyle = styled.h2`
 function CartItem({ cartItem }) {
   const { product } = cartItem;
   if (!product) return null;
-  console.log(product);
   return (
     <CartItemStyles>
       <img width="100" src={product.photo[0].image.publicUrlTransformed} alt={product.name} />
@@ -65,7 +65,6 @@ export default function Cart() {
   const me = useUser();
   const { cartOpen, closeCart } = useCart();
   if (!me) return null;
-  console.log(me);
   return (
     <CartStyles open={cartOpen}>
       <header>
@@ -79,6 +78,7 @@ export default function Cart() {
       </ul>
       <footer>
         <p>{formatMoney(calcTotalPrice(me.cart))}</p>
+        <Checkout />
       </footer>
     </CartStyles>
   );
