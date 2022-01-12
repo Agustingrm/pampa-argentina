@@ -49,7 +49,7 @@ export default function SingleProduct({ id }) {
   const { Product } = data;
 
   return (
-    <ProductStyles>
+    <ProductStyles data-testid="singleProduct">
       <Head>
         <title>Pampa Argentina | {Product.name}</title>
       </Head>
@@ -67,3 +67,5 @@ export default function SingleProduct({ id }) {
     </ProductStyles>
   );
 }
+
+export { SINGLE_ITEM_QUERY };
