@@ -15,4 +15,4 @@ This Next application has the following features:
 - The app has a payment option via Stripe
 - After the purchase, the order is saved with the items characteristics at the moment of the purchase
 - The app has an included search bar made via dropdown, that allows to search between all the items
-- Lastly the app has some test in Jest adn react-testing-library to test the current pages in case of changes.
+- Lastly the app has some test in Jest and react-testing-library to test the current pages in case of changes.
