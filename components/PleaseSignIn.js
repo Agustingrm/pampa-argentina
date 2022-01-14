@@ -1,6 +1,6 @@
 import { useUser } from "./User";
 import SignIn from "./SignIn";
-import Signup from "./Signup";
+import SignUp from "./SignUp";
 import RequestReset from "./RequestReset";
 
 export default function ({ children }) {
@@ -9,7 +9,7 @@ export default function ({ children }) {
     return (
       <>
         <SignIn />
-        <Signup />
+        <SignUp />
         <RequestReset />
       </>
     );
