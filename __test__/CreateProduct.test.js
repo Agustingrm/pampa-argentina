@@ -86,6 +86,7 @@ describe("<CreateProduct/>", () => {
     await userEvent.type(screen.getByPlaceholderText(/Description/i), item.description);
     // Submit it and see if the page change has been called
     await userEvent.click(screen.getByText(/Add Product/));
+    // The router.push needs to go to the end of the callstack
     await waitFor(() => wait(0));
     expect(Router.push).toHaveBeenCalled();
     expect(Router.push).toHaveBeenCalledWith({ pathname: "/product/abc123" });

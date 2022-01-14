@@ -23,7 +23,7 @@ const ItemStyles = styled.div`
     display: grid;
     width: 100%;
     border-top: 1px solid var(--lightGrey);
-    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    grid-template-columns: repeat(2, minmax(50px, 1fr));
     grid-gap: 1px;
     background: var(--lightGrey);
     text-align: center;
@@ -38,6 +38,11 @@ const ItemStyles = styled.div`
       border: 0;
       font-size: 1rem;
       padding: 1rem;
+      height: 3.5rem;
+      &:last-child {
+        grid-row: 2/3;
+        grid-column: 1/3;
+      }
     }
   }
 `;

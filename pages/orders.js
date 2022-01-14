@@ -34,7 +34,7 @@ const USER_ORDERS_QUERY = gql`
 
 const OrderUl = styled.ul`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 4rem;
   padding: 0;
 `;
@@ -56,7 +56,7 @@ export default function OrdersPage() {
       <h2>You have {allOrders.length} orders!</h2>
       <OrderUl>
         {allOrders.map((order) => (
-          <OrderItemStyles>
+          <OrderItemStyles key={order}>
             <Link href={`/order/${order.id}`}>
               <a>
                 <div className="order-data">

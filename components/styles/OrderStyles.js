@@ -34,5 +34,11 @@ const OrderStyles = styled.div`
       object-fit: cover;
     }
   }
+  @media all and (max-width: 850px) {
+    font-size: 1.25rem;
+    .order-item {
+      grid-template-columns: 150px 1fr;
+    }
+  }
 `;
 export default OrderStyles;

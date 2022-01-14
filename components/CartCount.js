@@ -23,6 +23,9 @@ const AnimationStyles = styled.span`
     position: relative;
     transition: transform 0.4s;
     backface-visibility: hidden;
+    @media all and (max-width: 850px) {
+      display: none;
+    }
   }
   .count-enter {
     transform: scale(4) rotateX(0.5turn);

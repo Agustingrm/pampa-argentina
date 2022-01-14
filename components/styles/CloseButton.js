@@ -14,6 +14,9 @@ const CloseButton = styled.button`
   &:hover {
     cursor: pointer;
   }
+  @media all and (max-width: 850px) {
+    right: 5px;
+  }
 `;
 
 export default CloseButton;

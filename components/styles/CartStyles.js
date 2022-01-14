@@ -38,7 +38,16 @@ const CartStyles = styled.div`
     margin: 0;
     padding: 0;
     list-style: none;
-    overflow: scroll;
+    overflow-y: scroll;
+  }
+  @media all and (max-width: 850px) {
+    padding: 20px 5px;
+    min-width: 250px;
+    footer {
+      p {
+        font-size: 1.5rem;
+      }
+    }
   }
 `;
 

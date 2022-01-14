@@ -15,10 +15,23 @@ const CartItemStyles = styled.li`
   grid-template-columns: auto 1fr auto;
   img {
     margin-right: 1rem;
+    width: 100px;
   }
   h3,
   p {
     margin: 0;
+  }
+  @media all and (max-width: 850px) {
+    img {
+      width: 50px;
+      align-self: center;
+    }
+    h3 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 1rem;
+    }
   }
 `;
 
@@ -39,6 +52,9 @@ const LoggedUserCartStyle = styled.h2`
   background-color: var(--green);
   color: white;
   line-height: 5rem;
+  @media all and (max-width: 850px) {
+    font-size: 2rem;
+  }
 `;
 
 function CartItem({ cartItem }) {
@@ -46,7 +62,7 @@ function CartItem({ cartItem }) {
   if (!product) return null;
   return (
     <CartItemStyles>
-      <img width="100" src={product.photo[0].image.publicUrlTransformed} alt={product.name} />
+      <img src={product.photo[0].image.publicUrlTransformed} alt={product.name} />
       <div>
         <h3>{product.name}</h3>
         <p>

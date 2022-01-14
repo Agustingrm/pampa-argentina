@@ -6,6 +6,7 @@ const NavStyles = styled.ul`
   display: flex;
   justify-self: end;
   font-size: 2rem;
+  height: 80px;
   a,
   button {
     padding: 1rem 3rem;
@@ -50,16 +51,42 @@ const NavStyles = styled.ul`
       &:after {
         width: calc(100% - 60px);
       }
-      @media (max-width: 700px) {
-        width: calc(100% - 10px);
+    }
+    @media (max-width: 700px) {
+      &:hover,
+      &:focus {
+        &:after {
+          width: calc(100% - 60px);
+        }
       }
     }
   }
-  @media (max-width: 1300px) {
+  @media all and (max-width: 1300px) {
     border-top: 1px solid var(--lightGrey);
     width: 100%;
-    justify-content: center;
+    justify-content: right;
     font-size: 1.5rem;
+  }
+  @media all and (max-width: 850px) {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0px, 1fr));
+    grid-template-rows: repeat(2, minmax(40px, 1fr));
+    font-size: 1.5rem;
+    border-top: 0;
+    grid-auto-flow: dense;
+    & > :nth-child(1) {
+      grid-column: 2/3;
+    }
+    & > :nth-child(2) {
+      grid-column: 3/4;
+    }
+    & > :nth-child(-n + 3) {
+      border-bottom: 5px solid var(--lightGrey);
+    }
+    a,
+    button {
+      padding: 1rem 1.5rem;
+    }
   }
 `;
 

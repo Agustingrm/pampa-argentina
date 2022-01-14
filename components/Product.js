@@ -3,11 +3,12 @@ import ItemStyles from "./styles/ItemStyles";
 import Title from "./styles/Title";
 import PriceTag from "./styles/PriceTag";
 import formatMoney from "../lib/formatMoney";
-import Image from "next/image";
 import DeleteProduct from "./DeleteProduct";
 import AddToCart from "./AddToCart";
+import { useUser } from "./User";
 
 export default function Product({ product }) {
+  const user = useUser();
   return (
     <ItemStyles>
       <img src={product?.photo[0]?.image?.publicUrlTransformed} alt={product.name} />
@@ -16,18 +17,22 @@ export default function Product({ product }) {
       </Title>
       <PriceTag>{formatMoney(product.price)}</PriceTag>
       <div className="buttonList">
-        <Link
-          href={{
-            pathname: "/update",
-            query: {
-              id: product.id,
-            },
-          }}
-        >
-          Edit ✏️
-        </Link>
+        {user?.role?.name === "Admin" && (
+          <>
+            <Link
+              href={{
+                pathname: "/update",
+                query: {
+                  id: product.id,
+                },
+              }}
+            >
+              Edit ✏️
+            </Link>
+            <DeleteProduct id={product.id}>Delete</DeleteProduct>
+          </>
+        )}
         <AddToCart id={product.id} />
-        <DeleteProduct id={product.id}>Delete</DeleteProduct>
       </div>
     </ItemStyles>
   );

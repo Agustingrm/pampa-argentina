@@ -74,7 +74,7 @@ export default function CreateProduct() {
           />
         </label>
         <label htmlFor="price">
-          Price of the Product
+          Price of the Product in cents
           <input
             type="number"
             id="price"
